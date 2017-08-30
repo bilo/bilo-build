@@ -29,6 +29,7 @@ cd ${directory}
 
 download_and_execute bilo-util install
 download_and_execute bilo-stack install
+download_and_execute bilo-model-io install
 download_and_execute bilo-access install
 download_and_execute bilo-access-simulated install
 download_and_execute bilo-access-android installArchives
