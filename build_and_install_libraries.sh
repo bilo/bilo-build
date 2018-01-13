@@ -4,17 +4,17 @@
 # Download, build and install all bilo libraries
 #
 
+set -e
 
 download_and_execute () 
 {
   git clone https://github.com/bilo/$1.git
   cd $1
-  ./gradlew $2
+  ./gradlew -p $2 $3
   cd ..
+  rm -rf $1
 } 
 
-
-set -e
 
 if [ -z ${ANDROID_HOME+x} ]
 then
@@ -27,12 +27,12 @@ directory=`mktemp -d`
 
 cd ${directory}
 
-download_and_execute bilo-util install
-download_and_execute bilo-stack install
-download_and_execute bilo-model-io install
-download_and_execute bilo-access install
-download_and_execute bilo-access-simulated install
-download_and_execute bilo-access-android installArchives
+download_and_execute bilo-util ./ install
+download_and_execute bilo-stack ./ install
+download_and_execute bilo-model-io ./ install
+download_and_execute bilo-access common install
+download_and_execute bilo-access simulated install
+download_and_execute bilo-access bilo-access-android installArchives
 
 cd ..
 rm -rf ${directory}
