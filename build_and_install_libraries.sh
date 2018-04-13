@@ -30,8 +30,8 @@ cd ${directory}
 download_and_execute bilo-util ./ install
 download_and_execute bilo-stack ./ install
 download_and_execute bilo-model-io ./ install
-download_and_execute bilo-access common install
-download_and_execute bilo-access simulated install
+download_and_execute bilo-access bilo-access-common install
+download_and_execute bilo-access bilo-access-simulated install
 download_and_execute bilo-access bilo-access-android installArchives
 
 cd ..
